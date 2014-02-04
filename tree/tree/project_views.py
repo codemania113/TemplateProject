@@ -1,5 +1,7 @@
 import django
 import json
+
+
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.conf import settings
@@ -27,7 +29,7 @@ def clean_node(request, node, addr, html):
 
  # Load method converts json to python dict
 def load(request, addr):
-    html = " "
+    html = ""
     json1_file = open('json1.json')
     json1_data = json.load(json1_file)
     html = clean_node(request, json1_data, addr, html)
