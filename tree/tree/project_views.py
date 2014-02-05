@@ -1,36 +1,38 @@
-import django
 import json
+import django
 
 
+from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.conf import settings
 
 
-def clean_node(request, node, addr, html):
-    title = node['title']
-    if node['slug'] == addr:
-        if node['kind'] == 'Topic':
-         html = render(request, 'project.html', {'title': title, 'node': node})
-        else:
-         address = settings.MEDIA_URL + node['slug'] + '.jpg'
-         html = render(request, 'project1.html', {'title': title, 'node': node , 'address':address})
-        return html
-    else:
-        if node['kind'] == 'Topic':
-            for child in node['children']:
-                html = clean_node(request, child, addr, html)
-    	return html
-
-
-
-
-
-
- # Load method converts json to python dict
 def load(request, addr):
-    html = ""
-    json1_file = open('json1.json')
-    json1_data = json.load(json1_file)
-    html = clean_node(request, json1_data, addr, html)
-    return HttpResponse(html)
+    with open('json1.json', 'r') as json1_file:
+        json1_data = json.load(json1_file)
+        node = json1_data
+        flag = 0
+        lis_ele = 0
+        lis = request.path.strip('/').split("/")
+        for tag in lis:
+            if flag == 0:
+                flag = 1
+                if node['slug'] == lis[-1]:
+                    break
+            else:
+                    if node['slug'] == lis[lis_ele] and node['kind'] == 'Topic':
+                        temp = lis_ele + 1
+                        for child in node['children']:
+                            if child['slug'] == lis[temp]:
+                                node = child
+                                lis_ele = lis_ele + 1
+                                break
+                            else:
+                                continue
+        if node['slug'] == lis[-1]:
+            address = settings.MEDIA_URL + node['slug'] + '.jpg'
+            if node['kind'] == 'Topic':
+                return render(request, 'project.html', {'title': node['title'], 'node': node})
+            else:
+                return render(request, 'project1.html', {'title': node['title'], 'node': node , 'address':address})
+        
