@@ -1,0 +1,42 @@
+<html> 
+<title>
+       {{ title }}
+</title> 
+
+
+<head>
+      <link rel="stylesheet" type="text/css" href = "{{ MEDIA_URL }}leaf_style.css">
+</head>
+
+<body>
+
+
+<nav>
+     <a class="Khanlink" href="https://www.khanacademy.org">
+     HOME</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/about">
+     ABOUT</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/login">
+     LOGIN</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/donate">
+     DONATE</a> |
+     </nav>
+
+<h1> 
+    {{ title }}
+</h1>
+
+<img class="normal" src="{{ MEDIA_URL }}{{ node.slug }}.jpg">
+</img>
+       
+<br>
+<br>
+<br>
+<textarea>
+         {{ node.content }}
+</textarea>
+
+
+</body>
+
+</html>
