@@ -1,0 +1,58 @@
+
+
+html,body
+{
+background-color:#F7FE2E;
+text-align:center;
+}
+
+
+h1
+{
+margin-bottom:0;
+font-size:30px;
+text-align:center;
+}
+
+a:link.Khanlink
+{
+text-align: center;
+background: #FF0000;
+}
+
+
+img.normal
+{
+width: 300px;
+height: 300px;
+display: block;
+margin-left: auto;
+margin-right: auto
+}
+
+textarea
+{
+display: block;
+margin-left: auto;
+margin-right: auto;
+width: 50em;
+height: 7em;
+border:1px solid #000000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

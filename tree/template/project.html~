@@ -1,0 +1,47 @@
+<html> 
+
+<title>
+{{title}} 
+</title> 
+
+<body bgcolor='#ED1212'>
+<center>
+
+<nav>
+<a href="https://www.khanacademy.org">HOME</a>|
+<a href="https://www.khanacademy.org/about">ABOUT</a> |
+<a href="https://www.khanacademy.org/login">LOGIN</a> |
+<a href="https://www.khanacademy.org/donate">DONATE</a>
+</nav>
+
+<h1>
+
+<font size="10"> 
+
+{{title}} 
+
+</font> 
+
+</h1>
+
+{% for child in node.children %}
+        
+	
+        <br> 
+	<br>
+	<a href="{{child.slug}}" >
+	<font size="6">
+        <b>
+        <center>
+       {{child.title}}
+        </center>
+        </b>
+        </font>
+        </a>
+        </br> 
+	{% endfor %}
+
+</center>
+
+</body>
+</html>

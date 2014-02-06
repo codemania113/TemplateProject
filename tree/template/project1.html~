@@ -1,0 +1,40 @@
+<html> 
+<title>
+{{title}}
+</title> 
+
+<body bgcolor='#EDFA07'>
+<center>
+
+<nav>
+<a href="https://www.khanacademy.org">HOME</a>|
+<a href="https://www.khanacademy.org/about">ABOUT</a> |
+<a href="https://www.khanacademy.org/login">LOGIN</a> |
+<a href="https://www.khanacademy.org/donate">DONATE</a>
+</nav>
+
+<h1> 
+<font size="7"> 
+
+{{title}}
+
+</font>
+</h1>
+
+<img src=" {{ address }} " height="350px" width="350px">
+</img>
+</centre>       
+<br>
+<br>
+<br>
+<textarea rows="5" cols="100">
+{{node.content}}
+</textarea>
+
+
+
+
+
+</body>
+
+</html>

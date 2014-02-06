@@ -1,0 +1,43 @@
+
+
+html,body
+{
+background-color: #FF0000;
+text-align:center;
+}
+
+
+a:link.Khanlink
+{
+text-align: center;
+background: #F7FE2E;
+}
+
+
+p
+{
+text-align:center;
+}
+
+a:link.click
+{
+width: 200px;
+font-size:30px;
+text-align:center;
+}
+
+h1
+{
+font-size:70px;
+margin-bottom:0;
+text-align:center;
+}
+
+
+
+
+
+
+
+
+
