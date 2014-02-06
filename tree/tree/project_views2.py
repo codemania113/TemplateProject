@@ -15,7 +15,7 @@ def generate_node(request, node, addr, html):
          html = render(request, 'project.html', {'title': title, 'node': node})
         else:
          address = settings.MEDIA_URL + node['slug'] + '.jpg'
-         html = render(request, 'project1.html', {'title': title, 'node': node, 'address':address})
+         html = render(request, 'project1.html', {'title': title, 'node': node , 'address':address})
         return html
     else:
         if node['kind'] == 'Topic':

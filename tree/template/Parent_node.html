@@ -1,0 +1,47 @@
+
+<html> 
+
+<head>
+ <link rel="stylesheet" type="text/css" href = "{{ MEDIA_URL }}parent_style.css">     
+</head>
+
+<title>
+{{ title }} 
+</title> 
+
+<body>
+
+
+<nav>
+     <a class="Khanlink" href="https://www.khanacademy.org">
+     HOME</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/about">
+     ABOUT</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/login">
+     LOGIN</a> |
+     <a class="Khanlink" href="https://www.khanacademy.org/donate">
+     DONATE</a> |
+</nav>
+
+
+
+<h1>
+    {{ title }} 
+</h1>
+
+<p>
+   {% for child in node.children %}
+        <br> 
+	    <br>
+	
+	    <a class="click" href="{{ child.slug }}" >
+	
+        {{ child.title }}
+        </a>
+         
+	{% endfor %}
+</p>
+
+
+</body>
+</html>
