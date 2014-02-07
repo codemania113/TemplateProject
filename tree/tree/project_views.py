@@ -1,14 +1,14 @@
+import json
+
+
 import django
 from django.conf import settings
 from django.http import HttpResponse
 from django.shortcuts import render
 
-import json
-
 def load(request, addr):
     with open('json1.json', 'r') as json1_file:
-        json1_data = json.load(json1_file)
-        node = json1_data
+        node = json.load(json1_file)
         flag = 0
         lis_element = 0
         lis = request.path.strip('/').split("/")
@@ -23,7 +23,6 @@ def load(request, addr):
                         for child in node['children']:
                             if child['slug'] == counter:
                                 node = child
-                                lis_element = lis_element + 1
                                 break
                     previous = counter            
         if node['slug'] == lis[-1]:   # the last slug of the list is checked here
