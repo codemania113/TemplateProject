@@ -1,5 +1,3 @@
-
-
 import django
 from django.conf import settings
 from django.http import HttpResponse
@@ -28,11 +26,11 @@ def load(request, addr):
                                 lis_element = lis_element + 1
                                 break
                     previous = counter            
-        if node['slug'] == lis[-1]:   # the last slug in the list is checked here
+        if node['slug'] == lis[-1]:   # the last slug of the list is checked here
             
              if node['kind'] == 'Topic':
-                return render(request, 'Parent_node.html', {'title': node['title'], 'node': node })
+                return render(request, 'Parent_node.html', {'node': node })
              else:
-                return render(request, 'Leaf_node.html', {'title': node['title'], 'node': node})
+                return render(request, 'Leaf_node.html', {'node': node})
         else:
             return HttpResponse("Invalid Url")
