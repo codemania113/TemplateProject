@@ -1,13 +1,11 @@
-
-
 <html> 
 <title>
-       {{ title }}
+       {{ node.title }}
 </title> 
 
 
 <head>
-      <link rel="stylesheet" type="text/css" href = "{{MEDIA_URL}}leaf_style.css">
+      <link rel="stylesheet" type="text/css" href = "{{ MEDIA_URL }}leaf_style.css">
 </head>
 
 <body>
@@ -21,14 +19,14 @@
      <a class="Khanlink" href="https://www.khanacademy.org/login">
      LOGIN</a> |
      <a class="Khanlink" href="https://www.khanacademy.org/donate">
-     DONATE</a>
+     DONATE</a> |
      </nav>
 
 <h1> 
-    {{ title }}
+    {{ node.title }}
 </h1>
 
-<img class="normal" src="{{MEDIA_URL}}{{ node.slug }}.jpg">
+<img class="normal" src="{{ MEDIA_URL }}{{ node.slug }}.jpg">
 </img>
        
 <br>
